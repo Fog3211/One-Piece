@@ -25,16 +25,19 @@ header {
 }
 
 header nav {
+    position: fixed;
     width: 1200px;
-    margin: 0 auto;
     background: rgba(0, 0, 0, .6);
     overflow: hidden;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
 }
 
 header .logo {
     font-size: 40px;
     color: #AE3E29;
-    padding: 0px 20px;
+    padding: 5px 20px;
     font-weight: bold;
     float: left;
     margin-top: 4px;
@@ -52,7 +55,7 @@ header .nav {
 header .nav>li {
     float: left;
     padding: 10px;
-    margin-top: 5px;
+    margin-top: 10px;
     cursor: pointer;
 }
 
@@ -75,21 +78,21 @@ header .nav>li:hover {
     font-size: 40px;
     text-align: center;
     letter-spacing: 4px;
+    margin-bottom: 50px;
 }
 
 #fruit ul {
-    padding: 20px;
+    padding: 0 20px;
     width: 60%;
     margin: 0 auto;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content:space-between;
+    justify-content: space-between;
 }
 
 #fruit ul li {
     flex: 1;
-    width: 40%;
     padding: 20px;
 }
 
@@ -98,10 +101,11 @@ header .nav>li:hover {
     color: #333;
     margin-top: 10px;
 }
+
 .fruit-box li h5 {
     font-size: 16px;
     color: rgb(110, 108, 108);
-    font-style:italic;
+    font-style: italic;
     margin-top: 10px;
 }
 
@@ -111,6 +115,53 @@ header .nav>li:hover {
     width: 200px;
     height: 200px;
     border-radius: 10px;
+}
+
+/* 强者世界 */
+#hero {
+    width: 100%;
+    overflow: hidden;
+}
+#hero h2{
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 40px;
+    text-indent: 5px;
+}
+.hero-box {
+    width: 70%;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.hero-box figure {
+    float: left;
+    width: calc(20% - 40px);
+    margin: 10px 20px;
+}
+
+.hero-box img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+}
+
+.hero-box figcaption {
+    margin: 10px auto 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333
+}
+
+.hero-box figure p {
+    font-size: 14px;
+    color: #777788;
+    margin-top: 0;
+    font-style: italic;
 }
 
 /* 成员时间轴 */
@@ -128,6 +179,7 @@ header .nav>li:hover {
 .timeline {
     position: relative;
     margin: 50px auto;
+    overflow: hidden;
 }
 
 .timeline .line {
@@ -135,9 +187,9 @@ header .nav>li:hover {
     display: block;
     width: 2px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(100px);
     /* 时间线高度 */
-    height: 2300px;
+    height: 2400px;
     background-color: rgb(126, 122, 122);
     z-index: -1;
 }
@@ -145,12 +197,7 @@ header .nav>li:hover {
 .timeline>li {
     position: relative;
     margin-top: 20px;
-}
-
-.timeline>li::after {
-    content: '';
-    display: block;
-    clear: both;
+    overflow: hidden;
 }
 
 .timeline img {
@@ -159,7 +206,30 @@ header .nav>li:hover {
     border-radius: 50%;
     border: 5px solid #ccc;
     cursor: pointer;
+    z-index: 1;
 }
+
+/* 伪元素无法获取到dom */
+/* 
+.timeline>li::before {
+    position: absolute;
+    content: '';
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 999;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline>li:nth-child(odd)::before {
+    transform: translateX(calc(-50% - 5px)) translateY(5px);
+}
+
+.timeline>li:nth-child(even)::before {
+    transform: translateX(calc(-50% + 5px)) translateY(5px);
+} */
 
 .timeline>li:nth-child(odd) {
     padding-right: calc(50% - 50px);
@@ -199,10 +269,15 @@ header .nav>li:hover {
 .teamer-detail .position {
     font-size: 16px;
     font-weight: bold;
+    padding: 5px 0;
 }
 
 .teamer-detail li:nth-child(3) {
+    text-indent: 20px;
     width: 400px;
+    padding: 5px 0;
+    color: #777;
+    font-style: italic;
 }
 
 
