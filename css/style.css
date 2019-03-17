@@ -20,12 +20,10 @@ li {
 .hidden {
     display: none;
 }
-
-.main {
+.main{
     height: 100%;
     width: 100%;
 }
-
 /* 首屏 */
 header {
     width: 100%;
