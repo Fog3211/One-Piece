@@ -1,5 +1,4 @@
-window.onload = function () {
-
+setTimeout(function(){
     document.getElementsByClassName("loading")[0].classList.add("hidden");
     document.getElementsByClassName("main")[0].classList.remove("hidden");
     
