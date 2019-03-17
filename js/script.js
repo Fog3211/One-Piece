@@ -2,7 +2,7 @@ window.onload = function () {
 
     document.getElementsByClassName("loading")[0].classList.add("hidden");
     document.getElementsByClassName("main")[0].classList.remove("hidden");
-
+    
     // 一次只能放一个音效
     let music_lock = false;
     let body = document.getElementsByTagName("body")[0];
